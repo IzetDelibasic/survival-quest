@@ -25,6 +25,7 @@ public class CraftingSystem : MonoBehaviour
 
 
 
+
     public static CraftingSystem Instance { get; set; }
 
 
@@ -47,9 +48,17 @@ public class CraftingSystem : MonoBehaviour
     {
         isOpen = false;
 
-        toolsBTN = craftingScreenUI.transform.Find("ToolSbutton").GetComponent<Button>();
+        toolsBTN = craftingScreenUI.transform.Find("ToolsButton").GetComponent<Button>();
         toolsBTN.onClick.AddListener(delegate { OpenToolsCategory(); });
+
+        //Axe
+        AxeReq1 = toolsScreenUI.transform.Find("Axe").transform.Find("req1").GetComponent<Text>();
+        AxeReq2 = toolsScreenUI.transform.Find("Axe").transform.Find("req2").GetComponent<Text>();
+
+        craftAxeBTN = toolsScreenUI.transform.Find("Axe").transform.Find("Button").GetComponent<Button>();
+        craftAxeBTN.onClick.AddListener(delegate { CraftAnyItem(); });
     }
+
 
 
     void OpenToolsCategory()
@@ -57,6 +66,14 @@ public class CraftingSystem : MonoBehaviour
         craftingScreenUI.SetActive(false);
         toolsScreenUI.SetActive(true);
     } 
+
+    void CraftAnyItem()
+    {
+        //Add Item To Inventory
+
+
+        //Remove resources from inventory
+    }
 
 
     // Update is called once per frame
