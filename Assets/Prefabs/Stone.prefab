@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 063020918c8b41c418c9fb6e662e6863, type: 3}
       propertyPath: m_Name
-      value: Stone_02
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 063020918c8b41c418c9fb6e662e6863, type: 3}
+      propertyPath: m_TagString
+      value: pickable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
