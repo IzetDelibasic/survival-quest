@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -21,6 +23,10 @@ public class InventorySystem : MonoBehaviour
     public bool isOpen;
 
     //public bool isFull;
+
+    public GameObject pickupAlert;
+    public TextMeshProUGUI pickupName;
+    public Image pickupImage;
 
 
     private void Awake()
@@ -90,10 +96,24 @@ public class InventorySystem : MonoBehaviour
 
         itemList.Add(itemName);
 
+        Sprite sprite = itemToAdd.GetComponent<Image>().sprite;
+
+        TriggerPickupPopUp(itemName, sprite);
+
         ReCalculateList();
         CraftingSystem.Instance.RefreshNeededItems();
 
     }
+
+    void TriggerPickupPopUp(string itemName, Sprite itemSprite)
+    {
+        pickupAlert.SetActive(true);
+
+        pickupName.text = itemName;
+        pickupImage.sprite = itemSprite;
+    }
+
+
 
     public bool CheckIfFull()
     {
