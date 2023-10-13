@@ -90,6 +90,9 @@ public class InventorySystem : MonoBehaviour
 
         itemList.Add(itemName);
 
+        ReCalculateList();
+        CraftingSystem.Instance.RefreshNeededItems();
+
     }
 
     public bool CheckIfFull()
@@ -143,6 +146,9 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
+
+        ReCalculateList();
+        CraftingSystem.Instance.RefreshNeededItems();
     }
 
     public void ReCalculateList()
