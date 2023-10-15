@@ -226,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40016317}
   - component: {fileID: 40016318}
+  - component: {fileID: 40016319}
   m_Layer: 5
   m_Name: HealthBarContainer
   m_TagString: Untagged
@@ -305,6 +306,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &40016319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40016316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74904758b265630468840cd853949e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthCounter: {fileID: 1984329427}
+  playerState: {fileID: 1904933349}
 --- !u!1 &84120364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,6 +4129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 991578786}
   - component: {fileID: 991578787}
+  - component: {fileID: 991578788}
   m_Layer: 5
   m_Name: CaloriesBarContainer
   m_TagString: Untagged
@@ -4193,6 +4209,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &991578788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991578785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7064e6b45c1aed41a6754efa7ea5fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  caloriesCounter: {fileID: 347740194}
+  playerState: {fileID: 1904933349}
 --- !u!1 &1004565210
 GameObject:
   m_ObjectHideFlags: 0
@@ -4752,6 +4782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1217608297}
   - component: {fileID: 1217608298}
+  - component: {fileID: 1217608299}
   m_Layer: 5
   m_Name: HydrationBarContainer
   m_TagString: Untagged
@@ -4831,6 +4862,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1217608299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217608296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cf609230c57b8a4b9db69c157de15c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hydrationCounter: {fileID: 771138559}
+  playerState: {fileID: 1904933349}
 --- !u!1 &1221222965
 GameObject:
   m_ObjectHideFlags: 0
@@ -5128,7 +5173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1330538403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6860,8 +6905,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1904933350}
+  - component: {fileID: 1904933351}
   m_Layer: 0
-  m_Name: PlayerState
+  m_Name: PlayerStateSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6882,6 +6928,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1904933351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904933349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7932a39ca27af08479b3c805f71c2f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 100
+  currentCalories: 0
+  maxCalories: 2000
+  playerBody: {fileID: 109069829}
+  currentHydrationPercent: 0
+  maxHydrationPercent: 100
+  isHydrationActive: 0
 --- !u!4 &1913360736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2795318547083434876, guid: dc20bf501e8161b40859eb66568d49f6, type: 3}

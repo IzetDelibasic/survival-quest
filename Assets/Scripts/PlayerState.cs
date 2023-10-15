@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerState : MonoBehaviour
@@ -23,7 +24,7 @@ public class PlayerState : MonoBehaviour
     public float currentHydrationPercent;
     public float maxHydrationPercent;
 
-
+    public bool isHydrationActive;
 
     private void Awake()
     {
@@ -41,6 +42,19 @@ public class PlayerState : MonoBehaviour
     {
         currentHealth = maxHealth;
         currentCalories = maxCalories;
+        currentHydrationPercent = maxHydrationPercent;
+
+        StartCoroutine(decreaseHydration());
+
+    }
+
+    IEnumerator decreaseHydration()
+    {
+        while(true)
+        {
+            currentHydrationPercent -= 1;
+            yield return new WaitForSeconds(10);
+        }
     }
 
     void Update()
