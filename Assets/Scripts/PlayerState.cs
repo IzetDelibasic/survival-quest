@@ -26,6 +26,19 @@ public class PlayerState : MonoBehaviour
 
     public bool isHydrationActive;
 
+    public void setHealth(float health)
+    {
+        currentHealth = health;
+    }
+
+    public void setCalories(float calories)
+    {
+        currentCalories = calories;
+    }
+    public void setHydration(float hydartion)
+    {
+        currentHydrationPercent = hydartion;
+    }
     private void Awake()
     {
         if (Instance != null && Instance != this)
