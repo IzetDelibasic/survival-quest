@@ -13,6 +13,8 @@ public class EquipingSystem : MonoBehaviour
     public List<GameObject> quickSlotsList = new List<GameObject>();
     public List<string> itemList = new List<string>();
 
+    public GameObject numbersHolder;
+
 
     private void Awake()
     {
@@ -30,6 +32,50 @@ public class EquipingSystem : MonoBehaviour
     private void Start()
     {
         PopulateSlotList();
+    }
+
+
+    private void Update()
+    {
+       if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SelectQuickSlot(1);
+        }
+       else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SelectQuickSlot(2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SelectQuickSlot(3);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SelectQuickSlot(4);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SelectQuickSlot(5);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            SelectQuickSlot(6);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            SelectQuickSlot(7);
+        }
+    }
+
+    void SelectQuickSlot(int number)
+    {
+        foreach (Transform child in numbersHolder.transform)
+        {
+            child.transform.Find("Text (TMP)").GetComponent<Text>().color = Color.gray;
+        }
+
+        Text toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("Text (TMP)").GetComponent<Text>();
+        toBeChanged.color = Color.white;
     }
 
     private void PopulateSlotList()
