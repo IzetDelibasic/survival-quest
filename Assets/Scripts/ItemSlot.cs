@@ -40,7 +40,12 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
             if(transform.CompareTag("QuickSlot") == false)
             {
-                DragDrop.itemBeingDragged.GetComponent<InventoryItem>().isNowEquipped = false;
+                DragDrop.itemBeingDragged.GetComponent<InventoryItem>().isInsideQuickSlot = false;
+            }
+
+            if (transform.CompareTag("QuickSlot"))
+            {
+                DragDrop.itemBeingDragged.GetComponent<InventoryItem>().isInsideQuickSlot = true;
             }
 
 

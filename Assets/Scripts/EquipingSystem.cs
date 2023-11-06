@@ -15,6 +15,9 @@ public class EquipingSystem : MonoBehaviour
 
     public GameObject numbersHolder;
 
+    public int selectedNumber = -1;
+    public GameObject selectedItem;
+
 
     private void Awake()
     {
@@ -69,13 +72,71 @@ public class EquipingSystem : MonoBehaviour
 
     void SelectQuickSlot(int number)
     {
-        foreach (Transform child in numbersHolder.transform)
+        if (checkIfSlotIsFull(number) == true)
         {
-            child.transform.Find("Text (TMP)").GetComponent<Text>().color = Color.gray;
+            if (selectedNumber != number)
+            {
+                selectedNumber = number;
+
+                //Unselect previosly selected item
+                if (selectedItem != null)
+                {
+                    selectedItem.gameObject.GetComponent<InventoryItem>().isSelected = false;
+                }
+
+                selectedItem = GetSelectedItem(number);
+                selectedItem.GetComponent<InventoryItem>().isSelected = true;
+
+                // Changing the color
+
+                foreach (Transform child in numbersHolder.transform)
+                {
+                    child.transform.Find("Text").GetComponent<Text>().color = Color.gray;
+                }
+
+                Text toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("Text").GetComponent<Text>();
+                toBeChanged.color = Color.white;
+            }
+            else
+            {
+                selectedNumber = -1; //null
+
+                //Unselect previosly selected item
+                if (selectedItem != null)
+                {
+                    selectedItem.gameObject.GetComponent<InventoryItem>().isSelected = false;
+                }
+                
+                // Changing the color
+                foreach (Transform child in numbersHolder.transform)
+                {
+                    child.transform.Find("Text").GetComponent<Text>().color = Color.gray;
+                }
+
+            }
         }
 
-        Text toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("Text (TMP)").GetComponent<Text>();
-        toBeChanged.color = Color.white;
+       
+
+    }
+
+    GameObject GetSelectedItem(int slotNumber)
+    {
+        return quickSlotsList[slotNumber - 1].transform.GetChild(0).gameObject;
+    }
+
+
+
+    bool checkIfSlotIsFull(int slotNumber)
+    {
+        if (quickSlotsList[slotNumber].transform.childCount > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void PopulateSlotList()
