@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EquipingSystem : MonoBehaviour
 {
@@ -91,7 +92,7 @@ public class EquipingSystem : MonoBehaviour
 
                 foreach (Transform child in numbersHolder.transform)
                 {
-                    child.transform.Find("Text").GetComponent<Text>().color = Color.gray;
+                    child.transform.Find("Text").GetComponent<TextMeshPro>().color = Color.gray;
                 }
 
                 Text toBeChanged = numbersHolder.transform.Find("number" + number).transform.Find("Text").GetComponent<Text>();
@@ -110,7 +111,7 @@ public class EquipingSystem : MonoBehaviour
                 // Changing the color
                 foreach (Transform child in numbersHolder.transform)
                 {
-                    child.transform.Find("Text").GetComponent<Text>().color = Color.gray;
+                    child.transform.Find("Text").GetComponent<TextMeshPro>().color = Color.gray;
                 }
 
             }
