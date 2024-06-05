@@ -1,3 +1,5 @@
+<center>
+
 # Wildescape - Survive to Escape
 
 **Wildescape** is an exciting adventure survival game. The player takes on the role of a government agent who wakes up in the middle of a dense forest with no memory of his previous life.
@@ -12,15 +14,8 @@ The player will also be able to consume the meat of animals they hunt, which wil
 
 The game was developed for the university competition FIT CC 2024 in Mostar, where I collaborated with my friend Mirnes Muratspahic. The rest of the game can be found on his profile, and the trailer will be provided below.
 
-## Authors
-
-Izet Delibasic
-Mirnes Muratspahic
-
 ## Trailer
+[Click here to watch the trailer](https://www.youtube.com/watch?v=d3SVVpHpS5g)
 
-[Click here to watch the trailer](#https://www.youtube.com/watch?v=d3SVVpHpS5g)
 
-## Profile
-
-For more details, visit the [profile](#).
+</center>
